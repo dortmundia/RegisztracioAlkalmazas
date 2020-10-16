@@ -14,6 +14,8 @@ namespace RegisztracioAlkalmazas
     public partial class Form1 : Form
     {
         //egy óra nem tudom mi után cska sikerült fel rakni azt a repo file-t githubra...
+        //VS850048: The specified region: CUS is not supported by the current instance.
+        //akkor még sem
         public Form1()
         {
             InitializeComponent();
