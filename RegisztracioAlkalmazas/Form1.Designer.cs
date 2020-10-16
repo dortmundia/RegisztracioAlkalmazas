@@ -44,6 +44,7 @@
             this.buttonBe = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -122,10 +123,11 @@
             // 
             // textBoxSzulDatum
             // 
-            this.textBoxSzulDatum.Location = new System.Drawing.Point(82, 35);
+            this.textBoxSzulDatum.Location = new System.Drawing.Point(69, 35);
             this.textBoxSzulDatum.Name = "textBoxSzulDatum";
             this.textBoxSzulDatum.Size = new System.Drawing.Size(103, 20);
             this.textBoxSzulDatum.TabIndex = 2;
+            this.textBoxSzulDatum.Visible = false;
             // 
             // textBoxNewHobby
             // 
@@ -179,12 +181,25 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(82, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 213);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttonBe);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonHozzaAd);
@@ -201,6 +216,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +240,7 @@
         private System.Windows.Forms.Button buttonBe;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
