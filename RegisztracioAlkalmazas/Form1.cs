@@ -13,6 +13,7 @@ namespace RegisztracioAlkalmazas
 {
     public partial class Form1 : Form
     {
+        //egy óra nem tudom mi után cska sikerült fel rakni azt a repo file-t githubra...
         public Form1()
         {
             InitializeComponent();
