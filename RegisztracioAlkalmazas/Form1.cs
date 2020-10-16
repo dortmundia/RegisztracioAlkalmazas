@@ -29,14 +29,21 @@ namespace RegisztracioAlkalmazas
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string filename = "MentettRegisztracio.txt";
             try
             {
+                var result = saveFileDialog1.ShowDialog();
+                if (result != DialogResult.OK)
+                {
+                    return;
+                }
+
+                // string filename= "MentettRegisztracio.txt";
+                string filename = saveFileDialog1.FileName;
                 using (var sw = new StreamWriter(filename))
                 {
 
                     sw.WriteLine(textBoxName.Text);
-                    sw.WriteLine(dateTimePicker1.Value);
+                    sw.WriteLine(dateTimePicker1.Text);
                     if (radioButtonF.Checked)
                     {
                         sw.WriteLine("férfi");
@@ -50,11 +57,7 @@ namespace RegisztracioAlkalmazas
                         Console.WriteLine("A nem nincs megadva, mentés nem tud végig futni!");
                     }
 
-                    sw.WriteLine();
-                    sw.WriteLine();
 
-
-                    sw.WriteLine();
                     foreach (var item in listBoxHobbik.Items)
                     {
                         sw.WriteLine(item);
