@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,15 @@ namespace RegisztracioAlkalmazas
         private void buttonHozzaAd_Click(object sender, EventArgs e)
         {
 
+            if (textBoxNewHobby.Text != null)
+            {
+                //if (listBoxHobbik.Items.Equals(textBoxNewHobby.Text))
+                
+
+
+                    listBoxHobbik.Items.Add(textBoxNewHobby.Text);
+                
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -57,10 +67,11 @@ namespace RegisztracioAlkalmazas
                         Console.WriteLine("A nem nincs megadva, mentés nem tud végig futni!");
                     }
 
-
+                    
                     foreach (var item in listBoxHobbik.Items)
                     {
                         sw.WriteLine(item);
+                       
                     }
                 }
 
@@ -88,6 +99,24 @@ namespace RegisztracioAlkalmazas
                 {
 
                     listBoxHobbik.Items.Clear();
+                    
+                        textBoxName.Text = sr.ReadLine();
+                        //dateTimePicker1.Value = Convert.ToDateTime(sr.ReadLine());
+                        textBoxSzulDatum.Text = sr.ReadLine();
+                        dateTimePicker1.Visible = false;
+                        textBoxSzulDatum.Visible = true;
+                        string seged = sr.ReadLine();
+                        if (seged == "Nő")
+                        {
+                            radioButtonN.Checked=true;
+                            radioButtonF.Checked = false;
+                        }
+                        else {
+
+                            radioButtonN.Checked = false;
+                            radioButtonF.Checked = true;
+                        }
+
                     while (!sr.EndOfStream)
                     {
                         listBoxHobbik.Items.Add(sr.ReadLine());
@@ -98,10 +127,10 @@ namespace RegisztracioAlkalmazas
             catch (IOException ex)
             {
                 MessageBox.Show(ex.Message + "hiba a megnyitás sorás");
-
             }
         }
 
+        
         private void buttonUseDateTimePicker_Click(object sender, EventArgs e)
         {
          //   textBoxSzulDatum.Text = format (dateTimePicker1.Value,"yyyy.MM.dd");

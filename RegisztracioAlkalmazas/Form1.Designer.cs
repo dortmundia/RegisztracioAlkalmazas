@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.label_szulD = new System.Windows.Forms.Label();
+            this.label_nem = new System.Windows.Forms.Label();
+            this.label_UjHobbi = new System.Windows.Forms.Label();
+            this.label_hobbi = new System.Windows.Forms.Label();
             this.radioButtonF = new System.Windows.Forms.RadioButton();
             this.radioButtonN = new System.Windows.Forms.RadioButton();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -47,50 +47,50 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // label1
+            // label_name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Név:";
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(12, 9);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(30, 13);
+            this.label_name.TabIndex = 0;
+            this.label_name.Text = "Név:";
             // 
-            // label2
+            // label_szulD
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Szül. Dátum:";
+            this.label_szulD.AutoSize = true;
+            this.label_szulD.Location = new System.Drawing.Point(12, 38);
+            this.label_szulD.Name = "label_szulD";
+            this.label_szulD.Size = new System.Drawing.Size(67, 13);
+            this.label_szulD.TabIndex = 1;
+            this.label_szulD.Text = "Szül. Dátum:";
             // 
-            // label3
+            // label_nem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nem:";
+            this.label_nem.AutoSize = true;
+            this.label_nem.Location = new System.Drawing.Point(12, 70);
+            this.label_nem.Name = "label_nem";
+            this.label_nem.Size = new System.Drawing.Size(32, 13);
+            this.label_nem.TabIndex = 2;
+            this.label_nem.Text = "Nem:";
             // 
-            // label4
+            // label_UjHobbi
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Új hobbi:";
+            this.label_UjHobbi.AutoSize = true;
+            this.label_UjHobbi.Location = new System.Drawing.Point(12, 96);
+            this.label_UjHobbi.Name = "label_UjHobbi";
+            this.label_UjHobbi.Size = new System.Drawing.Size(49, 13);
+            this.label_UjHobbi.TabIndex = 3;
+            this.label_UjHobbi.Text = "Új hobbi:";
             // 
-            // label5
+            // label_hobbi
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(215, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Kedvenc hobbi:";
+            this.label_hobbi.AutoSize = true;
+            this.label_hobbi.Location = new System.Drawing.Point(215, 12);
+            this.label_hobbi.Name = "label_hobbi";
+            this.label_hobbi.Size = new System.Drawing.Size(82, 13);
+            this.label_hobbi.TabIndex = 4;
+            this.label_hobbi.Text = "Kedvenc hobbi:";
             // 
             // radioButtonF
             // 
@@ -123,9 +123,9 @@
             // 
             // textBoxSzulDatum
             // 
-            this.textBoxSzulDatum.Location = new System.Drawing.Point(69, 35);
+            this.textBoxSzulDatum.Location = new System.Drawing.Point(79, 35);
             this.textBoxSzulDatum.Name = "textBoxSzulDatum";
-            this.textBoxSzulDatum.Size = new System.Drawing.Size(103, 20);
+            this.textBoxSzulDatum.Size = new System.Drawing.Size(106, 20);
             this.textBoxSzulDatum.TabIndex = 2;
             this.textBoxSzulDatum.Visible = false;
             // 
@@ -181,10 +181,12 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Szöveges fájlok (*.txt)|*.txt|CSV fájlok (*.csv)|*.csv|Minden fájl (*.*)|*.*";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // saveFileDialog1
             // 
+            this.saveFileDialog1.DefaultExt = "txt";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // dateTimePicker1
@@ -209,11 +211,11 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.radioButtonN);
             this.Controls.Add(this.radioButtonF);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_hobbi);
+            this.Controls.Add(this.label_UjHobbi);
+            this.Controls.Add(this.label_nem);
+            this.Controls.Add(this.label_szulD);
+            this.Controls.Add(this.label_name);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -224,11 +226,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label label_szulD;
+        private System.Windows.Forms.Label label_nem;
+        private System.Windows.Forms.Label label_UjHobbi;
+        private System.Windows.Forms.Label label_hobbi;
         private System.Windows.Forms.RadioButton radioButtonF;
         private System.Windows.Forms.RadioButton radioButtonN;
         private System.Windows.Forms.TextBox textBoxName;
